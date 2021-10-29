@@ -1,6 +1,7 @@
 import simplekml
 import psycopg2
 import time
+import os
 from datetime import datetime, timedelta
 
 class Ponto:
@@ -83,13 +84,13 @@ class Tela:
 
 tempoInicio = time.time()
 
+NOME_ARQUIVO_KML = os.getcwd() + r"\kml\focos_GO-24h.kml"
+DATA_ATUAL = datetime.utcnow()
+DATA_INICIAL = DATA_ATUAL - timedelta(days=1)
 CORES = ('ff00008b', 'ff2222b2', 'ff0000ff', 'ff4763ff', 'ff507fff', 'ff7aa0ff',
     'ff13458b', 'ff0b86b8', 'ff20a5da', 'ff60a4f4', 'ff87b8de', 'ffb3def5',
     'ffe16941', 'ffffbf00', 'ffffff00', 'ffd1ce00', 'ffd0e040', 'ffd4ff7f',
     'ff008000', 'ff32cd32', 'ff2fffad', 'ff9afa00', 'ff7fff00', 'ff90ee90', 'ff98fb98')
-NOME_ARQUIVO_KML = r"C:\Users\Queimadas\Documents\INPE\criador-kml\kml\focos_GO-24h-V2.kml"
-DATA_ATUAL = datetime.utcnow()
-DATA_INICIAL = DATA_ATUAL - timedelta(days=1)
 
 horarios = []
 for i in range(25):

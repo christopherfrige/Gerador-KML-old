@@ -1,6 +1,7 @@
 import psycopg2
 from datetime import timedelta, datetime
 import time
+import os
 
 inicioDaExecucao = time.time()
 
@@ -10,7 +11,7 @@ CORES = ['ff00008b', 'ff2222b2', 'ff0000ff', 'ff4763ff', 'ff507fff', 'ff7aa0ff',
     'ff008000', 'ff32cd32', 'ff2fffad', 'ff9afa00', 'ff7fff00', 'ff90ee90', 'ff98fb98']
 DATA_ATUAL = datetime.utcnow()
 DATA_INICIAL = DATA_ATUAL - timedelta(days=1)
-NOME_ARQUIVO_KML = r"C:\Users\Queimadas\Documents\INPE\criador-kml\kml\focos_GO-24h.kml"
+NOME_ARQUIVO_KML = os.getcwd() + r"\kml\focos_GO-24h.kml"
 # Lista de CORES para pintar os ícones no Style
 
 def inicializarBanco():
